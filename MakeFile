@@ -1,0 +1,8 @@
+%.o: %c $(FileCopy.h)
+	$(gcc) -c -o $@ $< $(-I)
+
+FileCopy : FileCopy.o
+	gcc -o FileCopy FileCopy.o
+
+FileCopy.o : FileCopy.c
+	gcc -c FileCopy.c
